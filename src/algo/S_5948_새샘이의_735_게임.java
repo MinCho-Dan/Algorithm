@@ -29,7 +29,7 @@ public class S_5948_새샘이의_735_게임 {
 				input[i] = Integer.parseInt(tmp[i]);
 			}
             
-            // 합의 중복값 제거를 위해 HashSet 사용 
+            // 합의 중복값 제거를 위해 HashSet 사용
             HashSet<Integer> sums = new HashSet<>();
             
             // 3중 for문으로 7C3 구하기

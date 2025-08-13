@@ -33,7 +33,7 @@ public class S_6109_추억의_2048게임 {
             
             // 방향에 따라 보드 회전
             if (direction.equals("up")) {
-                board = rotate(board, 3); // 반시계 방향 90도
+                board = rotate(board, 3); // 시계방향 3번 (반시계 방향 90도)
             } else if (direction.equals("down")) {
                 board = rotate(board, 1); // 시계 방향 90도
             } else if (direction.equals("right")) {
@@ -47,7 +47,7 @@ public class S_6109_추억의_2048게임 {
             if (direction.equals("up")) {
                 board = rotate(board, 1); // 시계 방향 90도
             } else if (direction.equals("down")) {
-                board = rotate(board, 3); // 반시계 방향 90도
+                board = rotate(board, 3); // 시계방향 3번 (반시계 방향 90도)
             } else if (direction.equals("right")) {
                 board = rotate(board, 2); // 180도 회전
             }
@@ -74,9 +74,9 @@ public class S_6109_추억의_2048게임 {
             
             for (int j = 0; j < N; j++) {
                 if (board[i][j] != 0) { // 비어있지 않다면
-                    if (idx > 0 && tmp[idx - 1] == board[i][j] && // 만나는 수가 동일하다면
-                    		!merged[idx - 1]) { // 아직 합쳐지지 않았고,
-                        tmp[idx - 1] *= 2; // 두배로 만들고 담기
+                    if (idx > 0 && tmp[idx - 1] == board[i][j] && // 만나는 수가 동일하고,
+                    		!merged[idx - 1]) { // 아직 합쳐지지 않았다면,
+                        tmp[idx - 1] *= 2; // tmp 배열에 두배로 만들고 담기
                         merged[idx - 1] = true; // 합쳐짐 표시
                     } else {
                         tmp[idx++] = board[i][j]; //왼쪽부터 순서대로 임시배열에 담기
