@@ -19,7 +19,6 @@ public class S_2806_NQueen {
         for (int test_case = 1; test_case <= T; test_case++) {
             sb.append("#" + test_case + " ");
             
-            // 7개의 수 저장하기
             N = Integer.parseInt(in.readLine());
             board = new int[N]; // (인덱스+1) = n번째 행 / 값 = 퀸이 놓인 열 번호
             
@@ -45,7 +44,7 @@ public class S_2806_NQueen {
 		// 유도 조건 : 현재 행(r)에 퀸을 놓을 열(c) 탐색
 		for (int c = 0; c < N; c++) {
 			if(possible(r,c)) { // 놓을 수 있는지 없는지 확인
-				board[r] = c; // 놓을 수 있다면 r,c자리에 퀸을 놓는다.
+				board[r] = c; // 놓을 수 있다면 (r,c) 자리에 퀸을 놓는다.
 				queen(r + 1); // 다음행으로 이동 (재귀)
 			}
 		}
@@ -75,6 +74,6 @@ public class S_2806_NQueen {
  * (N * N)의 보드판 위에 퀸을 N개 놓는 문제.
  * 퀸의 동선에 다른 퀸이 있으면 안된다.
  * 예전에 42에서 ten queen이라는 문제로 풀어봤던 문제
- * n = 10이면 724라서 그냥 724 출력하는 꼼수도 있었음...ㅎㅎ....
- * 그냥 백트래킹 갈기면 풀린다.
+ * 그떈 n = 10인거 답만 출력하면 됐었어서 그냥 724 출력하는 꼼수도 있었음...ㅎㅎ....
+ * 요약 : 그냥 백트래킹 갈기면 풀린다.
  */

@@ -33,6 +33,7 @@ public class S_5948_새샘이의_735_게임 {
             HashSet<Integer> sums = new HashSet<>();
             
             // 3중 for문으로 7C3 구하기
+            // 재귀로하면 좋지만 이 문제는 7C3이라고 딱 정해져있어서..
             for (int i = 0; i < 7; i++) {
                 for (int j = i + 1; j < 7; j++) {
                     for (int k = j + 1; k < 7; k++) {
@@ -42,7 +43,7 @@ public class S_5948_새샘이의_735_게임 {
                 }
             }
 
-            // HashSet의 값들을 List로 옮겨서 정렬
+            // 값들을 정렬하기 위해 List로 옮기기
             ArrayList<Integer> sortedSums = new ArrayList<>(sums);
             Collections.sort(sortedSums, Collections.reverseOrder());// 내림차순
            
@@ -53,3 +54,13 @@ public class S_5948_새샘이의_735_게임 {
 
 
 }
+
+
+
+/* 
+ * 7C3으로 7개중 3개 뽑는 조합의 합을 구해서
+ * 그 중 5번째로 큰 값을 출력하는 문제.
+ * 근데 이거 중복된 값 있으면 어떻게 출력하는지 문제에 안나와있는데
+ * 댓글보니까 중복 지워야 한대서 set 이용해서 중복 제거
+ * 
+ * */
